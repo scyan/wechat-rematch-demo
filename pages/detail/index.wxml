@@ -1,0 +1,3 @@
+<!--pages/detail/index.wxml-->
+<text>{{count}}</text>
+<button bindtap='add'>add</button>

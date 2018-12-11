@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+{{count}}
+
+</view>
+<view>{{num}}</view>
+<view wx:for='{{list}}' wx:key='index'>{{item}}</view>
+<button bindtap='addList'>add list</button>
+<button bindtap='add'>加num</button>
+<button bindtap='redirect'>to detail</button>

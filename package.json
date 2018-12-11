@@ -1,0 +1,16 @@
+{
+  "name": "wechat-rematch-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "deep-clone": "^3.0.3",
+    "wechat-rematch": "^0.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
