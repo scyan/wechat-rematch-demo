@@ -1,2 +1,3 @@
 <!--components/list/index.wxml-->
-<text>components/list/index.wxml</text>
+<text>im component {{count}}</text>
+<view>im component {{num}}</view>

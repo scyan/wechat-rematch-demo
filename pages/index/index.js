@@ -17,6 +17,9 @@ Page(connect(mapStateToData)({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   add:function(){
+    this.dispatch.count.increment(1)
+  },
+  addNum: function(){
     this.dispatch.num.add(1)
   },
   addList:function(){
@@ -24,7 +27,7 @@ Page(connect(mapStateToData)({
     
   },
   onShow: function(){
-    console.log(this.data)
+    
   },
   redirect: function(){
     wx.navigateTo({

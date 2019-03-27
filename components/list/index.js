@@ -1,5 +1,12 @@
 // components/list/index.js
-Component({
+const {connect} = require('wechat-rematch');
+function mapStateToData(state){
+  return{
+    count: state.count.count,
+    num: state.num
+  }
+}
+Component(connect(mapStateToData)({
   /**
    * 组件的属性列表
    */
@@ -20,4 +27,4 @@ Component({
   methods: {
 
   }
-})
+}))

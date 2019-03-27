@@ -18,7 +18,7 @@ function createStore(config){
   let rootState = store.getState();
   //由事件触发一次所有view的变更
   function handleChange(){
-    let rootState = store.getState()
+    let rootState = store.getState()//这里必须重新取一次state,是因为有些state是纯数字，没法通过引用自动修改
     store.views.map((viewWrap)=>{
       let {view,mapStateToData} = viewWrap;
       
@@ -30,18 +30,18 @@ function createStore(config){
     })
   }
   
-  
+  //遍历reducers和effects，分别传入state和rootState,并触发数据变化，并都绑到dispatch上
   Object.keys(models).map((key)=>{
     let model = models[key];
-    let state = model.state;
     let reducers = model.reducers;
     let effects = model.effects(store.dispatch);
+
     store.dispatch[key] = {}
     for(let func in reducers){
       let fn = reducers[func];
       
       store.dispatch[key][func] = (payload)=>{
-        model.state = fn(state,payload)
+        model.state = fn(model.state,payload)
         handleChange();
       }
     }
